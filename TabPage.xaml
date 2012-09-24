@@ -62,31 +62,35 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
 
-                <GridView
-                    x:Name="contentsGridView"
-                    AutomationProperties.AutomationId="ContentsGridView"
-                    AutomationProperties.Name="Search Results"
-                    TabIndex="1"
+                <ScrollViewer 
                     Grid.Row="1"
-                    Margin="0,-238,0,0"
-                    Padding="110,240,110,46"
-                    SelectionMode="None"
-                    IsSwipeEnabled="false"
-                    IsItemClickEnabled="True"
-                    ItemsSource="{Binding Source={StaticResource questionsViewSource}}">
-                    <GridView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical" Width="*">
-                                <Border Background="DarkBlue">
-                                    <TextBlock Text="{Binding Pergunta}" Padding="20,10,20,10" />
-                                </Border>
-                                <Border Background="Blue">
-                                    <TextBlock Text="{Binding Resposta}" Padding="20,10,20,10" />
-                                </Border>
-                            </StackPanel>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
+                    Margin="120,0,120,80"
+                    Style="{StaticResource VerticalScrollViewerStyle}">
+                    <ItemsControl
+                        x:Name="contentsGridView"
+                        AutomationProperties.AutomationId="ContentsGridView"
+                        AutomationProperties.Name="Search Results"
+                        TabIndex="1"                        
+                        ItemsSource="{Binding Source={StaticResource questionsViewSource}}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,1,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Border Background="{StaticResource PostTransitionMetal}" Tapped="Border_Tapped">
+                                        <TextBlock Text="{Binding Pergunta}" Padding="20,10,20,10" FontSize="20" />
+                                    </Border>
+                                    <Border Background="{StaticResource NobleGas}" Grid.Row="1" Visibility="Collapsed">
+                                        <TextBlock Text="{Binding Resposta}" Padding="20,10,20,10" FontSize="16" />
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                
             </Grid>
         </Grid>
 

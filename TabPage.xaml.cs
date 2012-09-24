@@ -44,18 +44,42 @@ namespace Reyx.Win8.PeriodicTable
             tabList.Add(new Tab("0", "Consulta de Débitos", true));
             tabList.Add(new Tab("1", "Crédito Consignado"));
             tabList.Add(new Tab("2", "Tempo de espera"));
-            
+
             questaoList.Add(new Questao("questao 1", "resposta 1", tabList[0]));
             questaoList.Add(new Questao("questao 2", "resposta 2", tabList[0]));
             questaoList.Add(new Questao("questao 3", "resposta 3", tabList[0]));
+            questaoList.Add(new Questao("questao 4", "resposta 4", tabList[0]));
+            questaoList.Add(new Questao("questao 5", "resposta 5", tabList[0]));
+            questaoList.Add(new Questao("questao 6", "resposta 6", tabList[0]));
+            questaoList.Add(new Questao("questao 7", "resposta 7", tabList[0]));
+            questaoList.Add(new Questao("questao 8", "resposta 8", tabList[0]));
+            questaoList.Add(new Questao("questao 9", "resposta 9", tabList[0]));
+            questaoList.Add(new Questao("questao 10", "resposta 10", tabList[0]));
+            questaoList.Add(new Questao("questao 11", "resposta 11", tabList[0]));
 
-            questaoList.Add(new Questao("questao 4", "resposta 4", tabList[1]));
-            questaoList.Add(new Questao("questao 5", "resposta 5", tabList[1]));
-            questaoList.Add(new Questao("questao 6", "resposta 6", tabList[1]));
+            questaoList.Add(new Questao("questao 12", "resposta 12", tabList[1]));
+            questaoList.Add(new Questao("questao 13", "resposta 13", tabList[1]));
+            questaoList.Add(new Questao("questao 14", "resposta 14", tabList[1]));
+            questaoList.Add(new Questao("questao 15", "resposta 15", tabList[1]));
+            questaoList.Add(new Questao("questao 16", "resposta 16", tabList[1]));
 
-            questaoList.Add(new Questao("questao 7", "resposta 7", tabList[2]));
-            questaoList.Add(new Questao("questao 8", "resposta 8", tabList[2]));
-            questaoList.Add(new Questao("questao 9", "resposta 9", tabList[2]));
+            questaoList.Add(new Questao("questao 17", "resposta 17", tabList[2]));
+            questaoList.Add(new Questao("questao 18", "resposta 18", tabList[2]));
+            questaoList.Add(new Questao("questao 19", "resposta 19", tabList[2]));
+            questaoList.Add(new Questao("questao 20", "resposta 20", tabList[2]));
+            questaoList.Add(new Questao("questao 21", "resposta 21", tabList[2]));
+            questaoList.Add(new Questao("questao 22", "resposta 22", tabList[2]));
+            questaoList.Add(new Questao("questao 23", "resposta 23", tabList[2]));
+            questaoList.Add(new Questao("questao 24", "resposta 24", tabList[2]));
+            questaoList.Add(new Questao("questao 25", "resposta 25", tabList[2]));
+            questaoList.Add(new Questao("questao 26", "resposta 26", tabList[2]));
+            questaoList.Add(new Questao("questao 27", "resposta 27", tabList[2]));
+            questaoList.Add(new Questao("questao 28", "resposta 28", tabList[2]));
+            questaoList.Add(new Questao("questao 29", "resposta 29", tabList[2]));
+            questaoList.Add(new Questao("questao 30", "resposta 30", tabList[2]));
+            questaoList.Add(new Questao("questao 31", "resposta 31", tabList[2]));
+            questaoList.Add(new Questao("questao 32", "resposta 32", tabList[2]));
+            questaoList.Add(new Questao("questao 33", "resposta 33", tabList[2]));
 
             this.DefaultViewModel["Tabs"] = tabList;
         }
@@ -179,6 +203,18 @@ namespace Reyx.Win8.PeriodicTable
             {
                 get { return string.Format("{0}: {1}", _pergunta, _resposta); }
             }
+        }
+
+        private void Border_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Border border = (Border)sender;
+            Grid parent = VisualTreeHelper.GetParent(border) as Grid;
+            Border sibling = VisualTreeHelper.GetChild(parent, 1) as Border;
+
+            if (sibling.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
+                sibling.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            else
+                sibling.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
     }
 }
