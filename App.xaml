@@ -1,0 +1,33 @@
+﻿<Application
+    x:Class="Reyx.Win8.PeriodicTable.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Reyx.Win8.PeriodicTable"
+    xmlns:localData="using:Reyx.Win8.PeriodicTable.Data">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- 
+                    Styles that define common aspects of the platform look and feel
+                    Required by Visual Studio project and item templates
+                 -->                
+                <ResourceDictionary Source="Common/StandardStyles.xaml" />
+                <ResourceDictionary Source="Common/CustomStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Application-specific resources -->
+            <x:String x:Key="AppName">Periodic Table</x:String>
+            
+            <!-- Data Files -->
+            <x:String x:Key="properties-atomic">properties_atomic.xml</x:String>
+            <x:String x:Key="properties-general">properties_general.xml</x:String>
+            <x:String x:Key="properties-initMainChart">properties_initMainChart.xml</x:String>
+            <x:String x:Key="properties-initSeriesChart">properties_initSeriesChart.xml</x:String>
+            <x:String x:Key="properties-misc">properties_misc.xml</x:String>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
